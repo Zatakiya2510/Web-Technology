@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+  </head>
+
+  <body>
+    <h1>Name Crud</h1>
+    <input type="text" id="name" />
+    <button onclick="add()">add</button>
+    <div id="displayArea"></div>
+    <input type="text" id="index" placeholder="index" />
+    <input type="text" id="editName" placeholder="name" />
+    <button onclick="editName()">Edit</button>
+    <script>
+      const arr = [];
+      const add = () => {
+        let a = document.getElementById("name");
+        arr.push(a.value);
+        console.log(arr);
+        a.value = "";
+        display();
+      };
+
+      const display = () => {
+        let displayArea = document.getElementById("displayArea");
+        displayArea.innerHTML = "";
+        for (let i = 0; i < arr.length; i++) {
+          displayArea.innerHTML +=
+            arr[i] +
+            "<button onclick='deleteName(" +
+            i +
+            ")'>Delete</button>" +
+            "<button onclick='setEditName(" +
+            i +
+            ")'>Edit</button>" +
+            "</br>";
+        }
+      };
+      const deleteName = (i) => {
+        arr.splice(i, 1);
+        display();
+      };
+
+      const editName = () => {
+        let index = Number.parseInt(document.getElementById("index").value);
+        let name = document.getElementById("editName");
+        arr[index] = name.value;
+        name.value = "";
+        //   index.value = "";
+        display();
+      };
+
+      function setEditName(i) {
+        let name = document.getElementById("editName");
+        name.value = arr[i];
+        let index = document.getElementById("index");
+        index.value = i;
+      }
+    </script>
+  </body>
+</html>

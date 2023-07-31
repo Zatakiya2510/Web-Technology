@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"], 
+    input[type="email"],
+    input[type="number"]{
+      width: 95%;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .error {
+      color: #ff0000;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #4caf50;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username"/>
+      <input type="password" id="password" placeholder="Password"/>
+      <input type="password" id="repeat-password" placeholder="Enter the same password"/>
+      <input type="email" id="email" placeholder="Email"/>
+      <input type="number" id="age" placeholder="Enter the age"/>
+      <input type="text" id="enrollment-number" placeholder="Enter the Enrollment number"/>
+      <p id="errorMessage" class="error"></p>
+      <button class="button" onclick="return validate()">Login</button>
+    </form>
+  </div>
+  <script src="04_validate.js"></script>
+</body>
+</html>
+

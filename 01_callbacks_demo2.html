@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="number1">
+    <input type="text" id="number2">
+    <button onclick="add(printSum)">+</button>
+    <div id="answer"></div>
+    <script>
+        function add(myCallBack) {
+            let a = Number.parseInt(document.getElementById("number1").value);
+            let b = Number.parseInt(document.getElementById("number2").value);
+            let sum = a + b;
+            myCallBack(sum);
+        }
+        function printSum(sum) {
+            let element = document.getElementById("answer");
+            element.innerHTML = sum;
+        }
+    </script>
+</body>
+
+</html>

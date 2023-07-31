@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="disp-area">
+    </div>
+    <script>
+        let arr1 = ["Devanshu", "Divyank"];
+        let arr2 = ["Disha", "Harshil"];
+        let faculties = [...arr1, ...arr2];
+        faculties = [...faculties, "Bala sir"];
+        console.log(faculties);
+        let obj1 = {
+            name: "Devanshu",
+            enrollmentNumber: "21010101179",
+            div: "C",
+            rollNo: 357,
+            sem: 4
+        }
+        function onSemChange(sem, div, rollNo) {
+            // rather than doing below process
+            // obj1.sem = sem;
+            // obj1.div = div;
+            // obj1.rollNo = rollNo;
+
+            // we will use the spread operator for doing the same thing
+            obj1 = { ...obj1, sem, div, rollNo }
+        }
+        console.log(obj1);
+        onSemChange(5, "A", 239);
+        console.log(obj1);
+    </script>
+</body>
+
+</html>

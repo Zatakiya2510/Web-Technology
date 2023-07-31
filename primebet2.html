@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number between range</title>
+</head>
+<body>
+    <script>
+        n1 = Number.parseInt(prompt("Enter the number n1 : "));
+        n2 = Number.parseInt(prompt("Enter the number n2 : "));
+        for(i=n1+1;i<n2;i++){
+            flag = true;
+            for(j =2; j<i; j++){
+                if(i%j==0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                document.write(i+"  ");
+            }
+        }
+    </script>
+</body>
+</html>

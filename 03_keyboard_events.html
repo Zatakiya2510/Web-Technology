@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><p>On Key up :</p></td>
+        <td colspan="2"><input type="text" id="up" onkeyup="keyUp()" /></td>
+      </tr>
+      <tr>
+        <td><p>On key down :</p></td>
+        <td><input type="text" onkeydown="keyDown()" /></td>
+        <td><p id="down"></p></td>
+      </tr>
+      <tr>
+        <td><p>On key press :</p></td>
+        <td colspan="2"><input type="text" onkeypress="keyPress()" /></td>
+      </tr>
+    </table>
+    <script>
+      function keyDown() {
+        document.getElementById("down").innerHTML =
+          "pressed a key inside the input field";
+      }
+      function keyUp() {
+        document.getElementById("up").value = document
+          .getElementById("up")
+          .value.toUpperCase();
+      }
+      function keyPress() {
+        alert("You pressed a key inside the input field");
+      }
+    </script>
+  </body>
+</html>

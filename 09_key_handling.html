@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vowel</title>
+</head>
+
+<body>
+  <p id="message"></p>
+  <script>
+    let message = document.getElementById("message");
+    document.addEventListener("keydown", (e) => {
+      if (e.key != "a" && e.key != "e" && e.key != "i" && e.key != "o" && e.key != "u") {
+        message.innerHTML = "Consonant is pressed";
+      }
+      else {
+        message.innerHTML = "Vovel is pressed";
+      }
+    });
+    document.addEventListener("keyup", (e) => { document.body.style.backgroundColor = "red" });
+  </script>
+</body>
+
+</html>

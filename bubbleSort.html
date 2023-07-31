@@ -1,0 +1,38 @@
+<!-- WAP to read an array from the user and sort them using bubble sort. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort</title>
+  </head>
+  <body>
+    <script>
+      function bubbleSort(arr) {
+        const length = arr.length;
+        for (let i = 0; i < length - 1; i++) {
+          for (let j = 0; j < length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              const temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+
+        return arr;
+      }
+      const numElements = parseInt(
+        prompt("Enter the number of elements in the array:")
+      );
+      const array = [];
+
+      for (let i = 0; i < numElements; i++) {
+        const element = parseInt(prompt(`Enter element ${i + 1}:`));
+        array.push(element);
+      }
+      const sortedArray = bubbleSort(array);
+      document.write("Sorted array in ascending order:" + " " + sortedArray);
+    </script>
+  </body>
+</html>

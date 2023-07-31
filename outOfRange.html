@@ -1,0 +1,88 @@
+<!-- Write an HTML page with Javascript that takes a number from popup box in the range 0-
+999 and display it in words.If the number is out of range ,it should show “out of range” and 
+if it is not a number ,it should show “not a number” message in the result box. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number to Words Converter</title>
+    <script>
+      function convertToWords() {
+        var number = prompt("Enter a number (0-999):");
+        if (isNaN(number)) {
+          document.write("Not a number");
+        } else {
+          number = parseInt(number);
+          if(number < 0 || number > 999){
+            document.write("Out of Range");
+          }else{
+            var words = convertNumberToWords(number);
+            document.write(words);
+          }
+        }
+      }
+      function convertNumberToWords(number){
+        var units = [
+          "",
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+          "six",
+          "seven",
+          "eight",
+          "nine",
+          "ten",
+          "eleven",
+          "twelve",
+          "thirteen",
+          "fourteen",
+          "fifteen",
+          "sixteen",
+          "seventeen",
+          "eighteen",
+          "nineteen",
+        ];
+        var tens = [
+          "",
+          "",
+          "twenty",
+          "thirty",
+          "forty",
+          "fifty",
+          "sixty",
+          "seventy",
+          "eighty",
+          "ninety",
+        ];
+
+        var words;
+
+        if (number === 0) {
+          words = "zero";
+        }else if(number < 20) {
+          words = units[number];
+        }else if(number < 100) {
+          var tensDigit = Math.floor(number / 10);
+          var unitsDigit = number % 10;
+          words = tens[tensDigit] + " " + units[unitsDigit];
+        } else {
+          var hundredsDigit = Math.floor(number / 100);
+          var remainingNumber = number % 100;
+
+          words =
+            units[hundredsDigit] +
+            " hundred " +
+            convertNumberToWords(remainingNumber);
+        }
+        return words.trim();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Number to Words Converter</h1>
+    <script>
+      convertToWords();
+    </script>
+  </body>
+</html>

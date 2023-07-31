@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> Calculator </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        *{
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        .wrap{
+            width: 400px;
+            margin: auto;
+            height: auto;
+            background-color: black;
+            padding: 15px;
+        }
+        input[type=text]{
+            width: 100%;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        input[type=button]{
+            width: 89px;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        #del{
+            width: 100%;
+        }
+    </style>
+</head>
+<body onkeypress="add()">  
+    <div class="wrap" aline="center">
+            <input type="text" name="display" id="screen">
+            </br>
+            <input type="button" value="9" onclick="add(this)">
+            <input type="button" value="8" onclick="add(this)">
+            <input type="button" value="7" onclick="add(this)">
+            <input type="button" value="+" onclick="add(this)">
+            </br>
+            <input type="button" value="6" onclick="add(this)">
+            <input type="button" value="5" onclick="add(this)">
+            <input type="button" value="4" onclick="add(this)">
+            <input type="button" value="-" onclick="add(this)">
+            </br>
+            <input type="button" value="3" onclick="add(this)">
+            <input type="button" value="2" onclick="add(this)">
+            <input type="button" value="1" onclick="add(this)">
+            <input type="button" value="*" onclick="add(this)">
+            </br>
+            <input type="button" value="0" onclick="add(this)">
+            <input type="button" value="/" onclick="add(this)">
+            <input type="button" value="%" onclick="add(this)">
+            <input type="button" value="=" onclick="ans()">
+            </br>
+            <input type="button" value="DELETE"  onclick="deletes()" id="del" >
+    </div>
+    <script>
+        function add(a) {
+        let screen = document.getElementById("screen");
+        screen.value += a.value;
+        console.log(e.keyCode-48)
+        }
+        function ans() {
+        let screen = document.getElementById("screen");
+        console.log(screen.value);
+        screen.value = eval(screen.value);
+        }
+        function deletes(){
+            let screen = document.getElementById("screen")
+            screen.value = ""
+        }
+
+    </script>
+</body>
+</html>

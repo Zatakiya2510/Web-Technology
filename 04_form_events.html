@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <table>
+      <tr>
+        <td><p>On blur event :</p></td>
+        <td colspan="2">
+          <input type="text" id="blurs" onblur="blurFunction()" />
+        </td>
+      </tr>
+      <tr>
+        <td><p>On Change :</p></td>
+        <td>
+          <select id="selects" onchange="changes()">
+            <option value="Divyank">Divyank</option>
+            <option value="Devanshu">Devanshu</option>
+            <option value="Mubin">Mubin</option>
+          </select>
+        </td>
+        <td><p id="demo"></p></td>
+      </tr>
+      <tr>
+        <td><p>On Focus :</p></td>
+        <td colspan="2"><input type="text" id="f" onfocus="focuses()" /></td>
+      </tr>
+      <tr>
+        <td><p>On input :</p></td>
+        <td>
+          <input type="text" id="texts" oninput="inputs()" />
+        </td>
+        <td><p id="demo1"></p></td>
+      </tr>
+      <tr>
+        <form>
+          <td><p>On valid :</p></td>
+          <td>
+            <input type="text" oninvalid="alert('Fill the input')" required />
+          </td>
+          <td><input type="submit" value="Submit" /></td>
+        </form>
+      </tr>
+      <tr>
+        <td><p>On search :</p></td>
+        <td><input type="search" id="si" onsearch="searchFunctions()" /></td>
+        <td><p id="demo2"></p></td>
+      </tr>
+      <tr>
+        <td><p>On select :</p></td>
+        <td>
+          <input type="text" value="Select me!!" onselect="selectFunction()" />
+        </td>
+      </tr>
+      <tr>
+        <form>
+          <td><p>On reset :</p></td>
+          <td><input type="text" /></td>
+          <td><input type="reset" value="Reset" /></td>
+        </form>
+      </tr>
+      <tr>
+        <form onsubmit="submitFunction()">
+          <td><p>On submit :</p></td>
+          <td><input type="text" /></td>
+          <td><input type="submit" value="Submit" /></td>
+        </form>
+      </tr>
+    </table>
+    <script>
+      function blurFunction() {
+        document.getElementById("blurs").value = document
+          .getElementById("blurs")
+          .value.toUpperCase();
+      }
+      function changes() {
+        document.getElementById("demo").innerHTML =
+          "You selected: " + document.getElementById("selects").value;
+      }
+      function focuses() {
+        document.getElementById("f").style.background = "yellow";
+      }
+      function inputs() {
+        document.getElementById("demo1").innerHTML =
+          "Your Input : " + document.getElementById("texts").value;
+      }
+      function searchFunctions() {
+        document.getElementById("demo2").innerHTML =
+          "You search for : " + document.getElementById("si").value;
+      }
+      function selectFunction() {
+        alert("You select some text");
+      }
+      function resetFunction() {
+        // alert("reset")
+        console.log("hello");
+      }
+      function submitFunction() {
+        alert("Submit successfully");
+      }
+    </script>
+  </body>
+</html>

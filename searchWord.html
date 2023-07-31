@@ -1,0 +1,31 @@
+<!-- Write a JavaScript that uses a loop that searches a word in sentence held in an array, 
+returning the index of the word. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search word</title>
+  </head>
+  <body>
+    <script>
+      function searchWord(sentence, word) {
+        for (let i = 0; i < sentence.length; i++) {
+          if (sentence[i].toUpperCase() === word.toUpperCase()) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      const sent = prompt("Enter the sentence");
+      const arr = sent.split(" ");
+      const word = prompt("Enter the word");
+      const index = searchWord(arr, word);
+      if (index !== -1) {
+        document.write(`The word "${word}" is found at index ${index}.`);
+      } else {
+        document.write(`The word "${word}" is not found in the sentence.`);
+      }
+    </script>
+  </body>
+</html>

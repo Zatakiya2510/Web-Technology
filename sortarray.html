@@ -1,0 +1,26 @@
+<!-- WAP to read an array from the user and sort them in ascending order. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Read the array from the user
+      const numElements = parseInt(
+        prompt("Enter the number of elements in the array:")
+      );
+      const array = [];
+
+      for (let i = 0; i < numElements; i++) {
+        const element = prompt(`Enter element ${i + 1}:`);
+        array.push(element);
+      }
+      array.sort();
+      document.write("Sorted array in ascending order:");
+      document.write(array);
+    </script>
+  </body>
+</html>

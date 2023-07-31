@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+        <p id="a">Devanshu</p>
+      </td>
+      <td>
+        <input type="button" value="On Click" onclick="singleClick()" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p id="b">Divyank</p>
+      </td>
+      <td>
+        <input type="button" value="On Double Click" ondblclick="doubleClick()" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p id="c">ABC</p>
+      </td>
+      <td>
+        <input type="button" value="On Mouse Up & Down Click" onmousedown="down()" onmouseup="up()" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <img src="download.jpg" onmouseenter="enter(this)" onmouseleave="leave(this)" height="50px" width="80px" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="height: 40px; width: 100px; border: 1px solid black" onmousemove="move()" onmouseout="out()"></div>
+      </td>
+      <td>
+        <p id="d"></p>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    function singleClick() {
+      document.getElementById("a").style.color = "red";
+    }
+    function doubleClick() {
+      document.getElementById("b").style.color = "blue";
+    }
+    function up() {
+      document.getElementById("c").style.color = "orange";
+    }
+    function down() {
+      document.getElementById("c").style.color = "pink";
+    }
+    function enter(x) {
+      x.style.height = "90px";
+      x.style.width = "140px";
+    }
+    function leave(x) {
+      x.style.height = "50px";
+      x.style.width = "80px";
+    }
+    function move() {
+      document.getElementById("d").innerHTML = "move";
+    }
+    function out() {
+      document.getElementById("d").innerHTML = "";
+    }
+  </script>
+</body>
+
+</html>

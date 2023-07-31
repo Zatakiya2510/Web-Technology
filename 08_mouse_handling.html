@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div onmouseenter="enter(this)" onmouseleave="leave(this)">Heading</div>
+    <button onclick="timeDate()">Find Time</button>
+    <div id="abc"></div>
+    <button onclick="red()">RED</button>
+    <button onclick="green()">GREEN</button>
+    <script>
+      function enter(temp) {
+        temp.style.color = "yellow";
+      }
+      function leave(temp) {
+        temp.style.color = "black";
+      }
+      let abc = document.getElementById("abc");
+      function timeDate() {
+        abc.innerHTML = Date();
+      }
+      function red() {
+        document.body.style.background = "red";
+      }
+      function green() {
+        document.body.style.background = "green";
+      }
+    </script>
+  </body>
+</html>

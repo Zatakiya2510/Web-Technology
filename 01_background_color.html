@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <input type="button" value="StartBG" onclick="startCounter()" />
+    <input type="button" value="StopBG" onclick="stopCounter()" />
+    <input type="button" value="StartFG" onclick="startFG()" />
+    <input type="button" value="StopFG" onclick="stopFG()" />
+    <script type="text/javascript">
+      function changeBackgroundColor() {
+        r = Math.ceil(Math.random() * 255);
+        g = Math.ceil(Math.random() * 255);
+        b = Math.ceil(Math.random() * 255);
+        document.body.style.backgroundColor =
+          "rgb(" + r + "," + g + "," + b + ")";
+      }
+      function startCounter() {
+        c = setInterval(changeBackgroundColor, 10);
+      }
+      function stopCounter() {
+        clearInterval(c);
+      }
+      function changeFontColor() {
+        r = Math.ceil(Math.random() * 255);
+        g = Math.ceil(Math.random() * 255);
+        b = Math.ceil(Math.random() * 255);
+        document.getElementById("para").style.color =
+          "rgb(" + r + "," + g + "," + b + ")";
+      }
+      function startFG() {
+        c2 = setInterval(changeFontColor, 5);
+      }
+      function stopFG() {
+        clearInterval(c2);
+      }
+    </script>
+    <p id="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio reiciendis
+      similique corporis odit numquam. Iusto quae quod ipsa nostrum, vel eius in
+      assumenda recusandae unde. Eius impedit modi aliquam nobis!
+    </p>
+  </body>
+</html>
